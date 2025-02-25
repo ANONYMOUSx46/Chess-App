@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Chess } from "chess.js";
 import ChessBoard from "@/components/ChessBoard";
 import GameStatus from "@/components/GameStatus";
-import SettingsMenu from "@/components/SettingsMenu"; // New: Settings Menu
-import SidePanel from "@/components/SidePanel"; // New: Shop, Inventory, Missions
+import SettingsMenu from "@/components/SettingsMenu"; // Settings Menu
+import SidePanel from "@/components/SidePanel"; //  Shop, Inventory, Missions
 import SignIn from "./SignIn"; // Import SignIn component
 import { toast } from "sonner";
 import { useGameStore } from "@/store/gameStore";
