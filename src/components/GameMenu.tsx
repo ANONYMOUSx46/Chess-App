@@ -112,7 +112,7 @@ const GameMenu = () => {
       <div className="mb-4 flex items-center justify-between">
         <h2 className="text-2xl font-bold">Game Menu</h2>
         <div className="text-lg font-semibold flex items-center gap-2">
-          <span className="text-yellow-500">⚡</span>
+          <span className="text-yellow-500">🪙💰</span>
           <span>{silverPieces} SP</span>
         </div>
       </div>
