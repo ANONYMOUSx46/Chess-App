@@ -1,69 +1,100 @@
-# Welcome to your Lovable project
+# ♔ Royal Chess-World ♕
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Project info
+Royal Chess is an interactive chess game application that allows players to enjoy single-player matches against a bot or engage in multiplayer 1v1 games with friends. The app also includes a reward system, customizable skins, and a side panel for managing inventory, missions, and shop items.
 
-**URL**: https://lovable.dev/projects/ac095559-44e2-4d52-b6e9-cb054c6acd40
+## 🌟 Features
 
-## How can I edit this code?
+### Core Features
+- **Single-Player Mode**: Play against a computer-controlled bot.
+- **Multiplayer Mode**: Challenge your friends in real-time 1v1 matches.
+- **Reward System**: Earn silver pieces and stars based on your performance.
+- **Customizable Skins**: Personalize your chessboard and pieces with unique skins.
+- **Save/Load Games**: Save your progress and load games at any time.
+- **Game Rooms**: Create or join game rooms for multiplayer matches.
 
-There are several ways of editing your application.
+### Additional Features
+- **Side Panel**:
+  - **Shop**: Purchase new skins and items.
+  - **Inventory**: Manage your purchased items.
+  - **Missions**: Track your progress and earn rewards.
+- **Settings Menu**:
+  - Profile settings.
+  - Theme customization.
+  - Game preferences.
+- **Real-Time Updates**: Synchronize moves and game states in multiplayer mode using Firebase Realtime Database.
 
-**Use Lovable**
+## 🛠️ Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ac095559-44e2-4d52-b6e9-cb054c6acd40) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
+### Frontend
+- React.js
 - TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Vite (Build Tool)
+- Tailwind CSS (Styling)
+- React Query (State Management)
+- Zustand (Global State Management)
 
-## How can I deploy this project?
+### Backend
+- Firebase Authentication
+- Firebase Realtime Database
 
-Simply open [Lovable](https://lovable.dev/projects/ac095559-44e2-4d52-b6e9-cb054c6acd40) and click on Share -> Publish.
+### Game Logic
+- chess.js (Chess Engine)
+- and Stockfish
 
-## I want to use a custom domain - is that possible?
+### Other Tools
+- Confetti.js (Visual Effects)
+- Sonner (Toasts/Notifications)
+- Lucide React (Icons)
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 🚀 Getting Started
+
+### Prerequisites
+Before running the project, ensure you have the following installed:
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/ANONYMOUSx46/Chess-App.git
+    cd Chess-App
+    ```
+2. **Install Dependencies**:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+   
+3. **Run the Development Server**:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+4. **Build for Production**:
+    ```bash
+    npm run build
+    # or
+    yarn build
+    ```
+
+## 🎮 How to Play
+
+### Single-Player Mode
+- Start a new game against the bot.
+- Make your moves on the chessboard and watch the bot respond.
+
+### Multiplayer Mode (NOT ACTIVATED YET)
+- Click "Create Game Room" to generate a unique game ID.
+- Share the game ID with your friend.
+- Your friend can join the game by entering the game ID and clicking "Join Game Room".
+- Take turns making moves in real-time.
+
+### Rewards
+- Win games to earn silver pieces and stars.
+- Use silver pieces to purchase skins and items in the shop.
+
+### Settings
+- Customize your profile, theme, and game preferences in the settings menu.
