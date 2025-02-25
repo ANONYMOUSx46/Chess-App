@@ -1,0 +1,209 @@
+/* Tailwind Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Variables */
+:root {
+  --background: 0 0% 100%; /* Light mode background */
+  --foreground: 222.2 84% 4.9%; /* Light mode text */
+  --card: 0 0% 100%; /* Light mode card background */
+  --card-foreground: 222.2 84% 4.9%; /* Light mode card text */
+  --popover: 0 0% 100%; /* Light mode popover background */
+  --popover-foreground: 222.2 84% 4.9%; /* Light mode popover text */
+  --primary: 222.2 47.4% 11.2%; /* Primary color */
+  --primary-foreground: 210 40% 98%; /* Primary text */
+  --secondary: 210 40% 96.1%; /* Secondary background */
+  --secondary-foreground: 222.2 47.4% 11.2%; /* Secondary text */
+  --muted: 210 40% 96.1%; /* Muted background */
+  --muted-foreground: 215.4 16.3% 46.9%; /* Muted text */
+  --accent: 210 40% 96.1%; /* Accent background */
+  --accent-foreground: 222.2 47.4% 11.2%; /* Accent text */
+  --destructive: 0 84.2% 60.2%; /* Destructive color */
+  --destructive-foreground: 210 40% 98%; /* Destructive text */
+  --border: 214.3 31.8% 91.4%; /* Border color */
+  --input: 214.3 31.8% 91.4%; /* Input field color */
+  --ring: 222.2 84% 4.9%; /* Focus ring color */
+  --radius: 0.5rem; /* Border radius */
+
+  /* Sidebar Colors */
+  --sidebar-background: #F9FAFB; /* Light mode sidebar background */
+  --sidebar-foreground: #1F2937; /* Light mode sidebar text */
+  --sidebar-accent: #E5E7EB; /* Light mode sidebar accent */
+}
+
+.dark {
+  --background: 222.2 84% 4.9%; /* Dark mode background */
+  --foreground: 210 40% 98%; /* Dark mode text */
+  --card: 222.2 84% 4.9%; /* Dark mode card background */
+  --card-foreground: 210 40% 98%; /* Dark mode card text */
+  --popover: 222.2 84% 4.9%; /* Dark mode popover background */
+  --popover-foreground: 210 40% 98%; /* Dark mode popover text */
+  --primary: 210 40% 98%; /* Dark mode primary color */
+  --primary-foreground: 222.2 47.4% 11.2%; /* Dark mode primary text */
+  --secondary: 217.2 32.6% 17.5%; /* Dark mode secondary background */
+  --secondary-foreground: 210 40% 98%; /* Dark mode secondary text */
+  --muted: 217.2 32.6% 17.5%; /* Dark mode muted background */
+  --muted-foreground: 215 20.2% 65.1%; /* Dark mode muted text */
+  --accent: 217.2 32.6% 17.5%; /* Dark mode accent background */
+  --accent-foreground: 210 40% 98%; /* Dark mode accent text */
+  --destructive: 0 62.8% 30.6%; /* Dark mode destructive color */
+  --destructive-foreground: 210 40% 98%; /* Dark mode destructive text */
+  --border: 217.2 32.6% 17.5%; /* Dark mode border color */
+  --input: 217.2 32.6% 17.5%; /* Dark mode input field color */
+  --ring: 212.7 26.8% 83.9%; /* Dark mode focus ring */
+
+  /* Sidebar Colors */
+  --sidebar-background: #1E293B; /* Dark mode sidebar background */
+  --sidebar-foreground: #FFFFFF; /* Dark mode sidebar text */
+  --sidebar-accent: #374151; /* Dark mode sidebar accent */
+}
+
+/* Global Styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Chessboard Container */
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 80px); /* 8 columns, each 80px wide */
+  grid-template-rows: repeat(8, 80px); /* 8 rows, each 80px tall */
+  width: 640px; /* 8 * 80px */
+  height: 640px; /* 8 * 80px */
+  border: 2px solid var(--border); /* Use border variable for light/dark mode */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Ensure pieces don't overflow the board */
+  background-color: var(--card); /* Use card background for light/dark mode */
+}
+
+/* Individual Square */
+.chess-square {
+  width: 80px; /* Square size */
+  height: 80px; /* Square size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: var(--square-color); /* Use CSS variables for light/dark squares */
+}
+
+/* Light and Dark Squares */
+.chess-square.light {
+  --square-color: #f0d9b5; /* Light square color */
+}
+.chess-square.dark {
+  --square-color: #b58863; /* Dark square color */
+}
+
+/* Chess Piece Image */
+.chess-piece {
+  width: 100%; /* Fill the square */
+  height: 100%; /* Fill the square */
+  object-fit: contain; /* Ensure the image fits within the square without distortion */
+  pointer-events: none; /* Disable interactions with the image */
+}
+
+/* Reward Popup */
+.reward-popup {
+  @apply fixed inset-0 flex items-center justify-center z-50 bg-black/70;
+}
+
+.reward-popup-content {
+  @apply bg-card p-6 rounded-lg shadow-lg text-card-foreground max-w-sm;
+}
+
+.reward-popup-content h2 {
+  @apply text-xl font-bold mb-4;
+}
+
+.reward-popup-content button {
+  @apply px-4 py-2 bg-primary text-primary-foreground rounded hover:bg-accent transition-colors;
+}
+
+/* Settings Menu */
+.settings-menu {
+  @apply absolute top-4 right-4 bg-card p-4 rounded-lg shadow-md z-50 text-card-foreground;
+}
+
+.settings-menu h2 {
+  @apply text-lg font-bold mb-2;
+}
+
+.settings-menu select {
+  @apply w-full p-2 border border-input rounded-md mb-2;
+}
+
+/* Side Panel (Shop, Inventory, Missions) */
+.side-panel {
+  @apply fixed top-0 right-0 h-screen w-64 bg-[var(--sidebar-background)] text-[var(--sidebar-foreground)] p-4 shadow-lg z-40;
+}
+
+.side-panel h2 {
+  @apply text-lg font-bold mb-4;
+}
+
+.side-panel button {
+  @apply w-full p-2 bg-[var(--sidebar-background)] text-[var(--sidebar-foreground)] rounded-md mb-2 hover:bg-[var(--sidebar-accent)] transition-colors;
+}
+
+/* Multiplayer Buttons */
+.multiplayer-buttons {
+  @apply flex gap-2 mt-4;
+}
+
+.multiplayer-buttons input {
+  @apply flex-1 p-2 border border-input rounded-md;
+}
+
+/* Saved Games Buttons */
+.saved-games-buttons {
+  @apply flex gap-2 mt-4;
+}
+
+/* Mission Progress */
+.mission-progress {
+  @apply mt-4 text-center;
+}
+
+.mission-progress h3 {
+  @apply text-base font-bold mb-2;
+}
+
+.mission-progress p {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Stars Rating */
+.stars-rating {
+  @apply flex justify-center gap-1 mt-4;
+}
+
+.stars-rating svg {
+  @apply w-6 h-6 fill-yellow-400 transition-transform duration-300 scale-100;
+}
+
+.stars-rating svg.inactive {
+  @apply fill-gray-300 scale-100;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .side-panel {
+    @apply w-full h-auto p-4;
+  }
+
+  .multiplayer-buttons,
+  .saved-games-buttons {
+    @apply flex-col;
+  }
+
+  .multiplayer-buttons input {
+    @apply w-full;
+  }
+}
